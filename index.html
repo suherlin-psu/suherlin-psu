@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admin - Manajemen Data</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+    body {
+        background-color: #f8f9fa;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .sidebar {
+        min-height: 100vh;
+        background-color: #212529;
+        color: #fff;
+    }
+
+    .sidebar .nav-link {
+        color: #rgba(255, 255, 255, .75);
+        margin-bottom: 5px;
+    }
+
+    .sidebar .nav-link.active {
+        background-color: #0d6efd;
+        color: #fff;
+    }
+
+    .sidebar .nav-link:hover {
+        color: #fff;
+        background-color: rgba(255, 255, 255, .1);
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .card-table {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar / Navigasi Kiri -->
+            <div class="col-md-3 col-lg-2 sidebar p-3 d-none d-md-block">
+                <h5 class="text-center mb-4 py-2 border-bottom"><i class="fa-solid fa-gauge me-2"></i>Admin Panel</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa-solid fa-house me-2"></i> Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="?page=tampil"><i class="fa-solid fa-users me-2"></i> Data
+                            Pengguna</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa-solid fa-gear me-2"></i> Pengaturan</a>
+                    </li>
+                    <li class="nav-item mt-4">
+                        <a class="nav-link text-danger" href="#"><i class="fa-solid fa-right-from-bracket me-2"></i>
+                            Keluar</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Konten Utama -->
+            <div class="col-md-9 col-lg-10 main-content">
+                <!-- Navbar Atas (Mobile & Info Akun) -->
+                <nav class="navbar navbar-expand-lg navbar-light bg-white p-3 mb-4 rounded shadow-sm">
+                    <div class="container-fluid">
+                        <span class="navbar-brand mb-0 h1 d-md-none">Admin Panel</span>
+                        <div class="ms-auto d-flex align-items-center">
+                            <span class="me-3 d-none d-sm-inline">Halo, <strong>Administrator</strong></span>
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=80&h=80&q=80"
+                                alt="Avatar" class="rounded-circle" width="40" height="40">
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Bagian Judul dan Tombol Tambah -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h2 class="fw-bold text-dark">Daftar Data Pengguna</h2>
+                        <p class="text-muted mb-0">Manajemen informasi akun, nama, dan email pengguna sistem.</p>
+                    </div>
+                    <button class="btn btn-primary shadow-sm"><i class="fa-solid fa-user-plus me-2"></i>Tambah
+                        Data</button>
+                </div>
+
+                <!-- Tabel Data -->
+                <div class="card card-table bg-white p-4">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th scope="col" style="width: 80px;">No</th>
+                                    <th scope="col">Nama Lengkap</th>
+                                    <th scope="col">Alamat Email</th>
+                                    <th scope="col">Jabatan / Role</th>
+                                    <th scope="col" class="text-center" style="width: 150px;">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Data Pengguna Baru (Berbeda dari web referensi) -->
+                                <tr>
+                                    <td class="fw-bold text-muted">1</td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="fw-semibold">Aris Budiman</div>
+                                        </div>
+                                    </td>
+                                    <td><span class="text-primary">aris.budiman@Company.id</span></td>
+                                    <td><span
+                                            class="badge bg-success-subtle text-success border border-success-subtle">Project
+                                            Manager</span></td>
+                                    <td class="text-center">
+                                        <button class="btn btn-sm btn-outline-warning me-1" title="Ubah"><i
+                                                class="fa-solid fa-pen"></i></button>
+                                        <button class="btn btn-sm btn-outline-danger" title="Hapus"><i
+                                                class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold text-muted">2</td>
+                                    <td>
+                                        <div class="fw-semibold">Citra Lestari</div>
+                                    </td>
+                                    <td><span class="text-primary">citra.lestari@techmail.com</span></td>
+                                    <td><span
+                                            class="badge bg-primary-subtle text-primary border border-primary-subtle">System
+                                            Analyst</span></td>
+                                    <td class="text-center">
+                                        <button class="btn btn-sm btn-outline-warning me-1" title="Ubah"><i
+                                                class="fa-solid fa-pen"></i></button>
+                                        <button class="btn btn-sm btn-outline-danger" title="Hapus"><i
+                                                class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold text-muted">3</td>
+                                    <td>
+                                        <div class="fw-semibold">Dimas Prabowo</div>
+                                    </td>
+                                    <td><span class="text-primary">dimas.prabowo@workspace.net</span></td>
+                                    <td><span class="badge bg-info-subtle text-info border border-info-subtle">DevOps
+                                            Engineer</span></td>
+                                    <td class="text-center">
+                                        <button class="btn btn-sm btn-outline-warning me-1" title="Ubah"><i
+                                                class="fa-solid fa-pen"></i></button>
+                                        <button class="btn btn-sm btn-outline-danger" title="Hapus"><i
+                                                class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold text-muted">4</td>
+                                    <td>
+                                        <div class="fw-semibold">Eka Wahyuni</div>
+                                    </td>
+                                    <td><span class="text-primary">eka.wahyuni@enterprise.com</span></td>
+                                    <td><span
+                                            class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">UI/UX
+                                            Designer</span></td>
+                                    <td class="text-center">
+                                        <button class="btn btn-sm btn-outline-warning me-1" title="Ubah"><i
+                                                class="fa-solid fa-pen"></i></button>
+                                        <button class="btn btn-sm btn-outline-danger" title="Hapus"><i
+                                                class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold text-muted">5</td>
+                                    <td>
+                                        <div class="fw-semibold">Fikri Haikal</div>
+                                    </td>
+                                    <td><span class="text-primary">fikri.haikal@clouddev.org</span></td>
+                                    <td><span class="badge bg-dark-subtle text-dark border border-dark-subtle">Fullstack
+                                            Developer</span></td>
+                                    <td class="text-center">
+                                        <button class="btn btn-sm btn-outline-warning me-1" title="Ubah"><i
+                                                class="fa-solid fa-pen"></i></button>
+                                        <button class="btn btn-sm btn-outline-danger" title="Hapus"><i
+                                                class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination / Navigasi Halaman -->
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="text-muted small">Menampilkan 5 dari 5 data pengguna</span>
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination pagination-sm mb-0">
+                                <li class="page-item disabled"><a class="page-item link nav-link"
+                                        href="#">Sebelumnya</a></li>
+                                <li class="page-item active"><a class="page-item link nav-link" href="#">1</a></li>
+                                <li class="page-item disabled"><a class="page-item link nav-link"
+                                        href="#">Selanjutnya</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
